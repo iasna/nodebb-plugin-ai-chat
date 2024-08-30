@@ -1,16 +1,16 @@
 {
-  "name": "nodebb-plugin-quickstart",
-  "version": "0.4.3",
+  "name": "nodebb-plugin-ai-chat",
+  "version": "1.0.0",
   "description": "A starter kit for quickly creating NodeBB plugins",
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nodebb/nodebb-plugin-quickstart"
+    "url": "https://github.com/nodebb/nodebb-plugin-ai-chat"
   },
   "keywords": [
     "nodebb",
     "plugin",
-    "quickstart",
+    "ai-chat",
     "shell"
   ],
   "husky": {
@@ -27,19 +27,21 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nodebb/nodebb-plugin-quickstart/issues"
+    "url": "https://github.com/nodebb/nodebb-plugin-ai-chat/issues"
   },
   "readmeFilename": "README.md",
   "nbbpm": {
-    "compatibility": "^3.2.0"
+    "compatibility": "^3.8.4"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.4.1",
-    "@commitlint/config-angular": "19.4.1",
+    "@commitlint/cli": "19.4.0",
+    "@commitlint/config-angular": "19.3.0",
     "eslint": "9.x",
     "eslint-config-nodebb": "0.2.1",
     "eslint-plugin-import": "2.x",
-    "husky": "9.1.5",
-    "lint-staged": "15.2.9"
+    "husky": "9.1.4",
+    "lint-staged": "15.2.9",
+    "axios": "^1.7.4",
+    "qs": "^6.13.0"
   }
 }

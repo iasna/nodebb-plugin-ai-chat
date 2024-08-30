@@ -10,10 +10,6 @@
  * This one below executes when NodeBB reports it is ready...
  */
 
-document.addEventListener('DOMContentLoaded', function() {
-    initChat();
-});
-
 function initChat() {
 
 	const chatInput = document.getElementById('chat-input');
@@ -130,14 +126,8 @@ function initChat() {
 		// called everytime user navigates between pages including first load
 	});
 
-
-	hooks.on('action:ajaxify.contentLoaded', (data) => {
-		// initChat();
-		// called everytime user navigates between pages including first load
-	});
 	
 	hooks.on('action:ajaxify.dataLoaded', (data) => {
-		console.log(data);
 	     initChat();
 	   // called everytime user navigates between pages including first load
    });
@@ -149,5 +139,5 @@ function initChat() {
  */
 
 $(document).ready(function () {
-	// ...
+	initChat()
 });

@@ -1,18 +1,18 @@
 {
-	"id": "nodebb-plugin-quickstart",
+	"id": "nodebb-plugin-ai-chat",
 	"url": "https://github.com/NodeBB/nodebb-plugin-quickstart",
 	"library": "./library.js",
 	"hooks": [
 		{ "hook": "static:app.load", "method": "init" },
 		{ "hook": "static:api.routes", "method": "addRoutes" },
-		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" }
+		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
+		{ "hook": "filter:ai-chat.build", "method": "loadValues" }
+
 	],
 	"staticDirs": {
 		"static": "./static"
 	},
-	"scss": [
-		"scss/quickstart.scss"
-	],
+	"scss": [ "scss/ai-chat.scss"],
 	"scripts": [
 		"public/lib/main.js"
 	],
@@ -20,8 +20,8 @@
 		"public/lib/acp-main.js"
 	],
 	"modules": {
-		"../client/quickstart.js": "./public/lib/quickstart.js",
-		"../admin/plugins/quickstart.js": "./public/lib/admin.js"
+		"../client/ai-chat.js": "./public/lib/ai-chat.js",
+		"../admin/plugins/ai-chat.js": "./public/lib/admin.js"
 	},
 	"templates": "templates"
 }

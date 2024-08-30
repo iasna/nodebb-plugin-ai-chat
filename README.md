@@ -1,16 +1,20 @@
-# Quickstart Plugin for NodeBB
+# AI chat Plugin for NodeBB
 
-A starter kit for quickly creating NodeBB plugins. Comes with a pre-setup LESS file, server side JS script with an `action:app.load` hook, and a client-side script. Most plugins need at least one of the above, so this ought to save you some time. For a full list of hooks have a look at our [wiki page](https://github.com/NodeBB/NodeBB/wiki/Hooks), and for more information about creating plugins please visit our [documentation portal](https://docs.nodebb.org/).
+AI-Powered Chat Integration: Enhance your NodeBB forum with an AI-powered chat feature that connects to your knowledge base. The plugin uses advanced Retrieval-Augmented Generation (RAG) with OpenAI's language model to provide intelligent responses based on community-indexed documents.
 
-Fork this or copy it, and using your favourite text editor find and replace all instances of `nodebb-plugin-quickstart` with `nodebb-plugin-your-plugins-name`. Change the author's name in the LICENSE and package.json files.
+Seamless Authorization and WebSocket Communication: The plugin initiates a token request to the authorization server when the AI chat page loads. Once authenticated, it establishes a WebSocket connection with your knowledge base URL, ensuring real-time, secure communication.
 
-## Hello World
+Customizable Admin Settings: Admins can easily configure the plugin by providing necessary details such as the client ID, client secret, knowledge base URL, and authorization server URL. This ensures that the AI chat is tailored to your community's specific needs.
 
-Really simple, just edit `static/lib/main.js` and paste in `console.log('hello world');`, and that's it!
+Dynamic AI Chat for Forums: The AI Chat Plugin for NodeBB enables dynamic, context-aware conversations within your forum. By leveraging your knowledge base, it provides accurate and relevant answers, enriching the user experience with AI-driven insights.
+
+Easy Integration and Setup: Designed with simplicity in mind, the AI Chat Plugin can be quickly integrated into your NodeBB forum. With minimal setup required, you can offer your community an advanced AI chat system that leverages your existing knowledge base.
+
+
 
 ## Installation
 
-    npm install nodebb-plugin-quickstart
+    npm install nodebb-plugin-ai-chat
 
 ## Screenshots
 

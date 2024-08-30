@@ -12,6 +12,43 @@ Easy Integration and Setup: Designed with simplicity in mind, the AI Chat Plugin
 
 
 
+The plugin uses the filter:ai-chat.build hook to execute the loadValues method. This method is responsible for checking the token stored in the settings. If the token has expired, loadValues fetches a new token and updates the templateData. Additionally, if the Knowledge Base Server URL is changed in the admin settings, loadValues retrieves the updated URL and includes it in templateData.
+
+The templateData is then utilized in the client-side through the action:ajaxify.dataLoaded hook to handle page navigation. When a page refresh occurs, the required data is fetched from the server using Socket.io with the following approach:
+
+Client-side Code:
+
+```
+socket.emit('plugins.AIChatPlugin.getSettings', {}, function (err, data) {
+    if (err) {
+        console.log(err);
+    } else {
+        // Handle chat initialization with the received data
+    }
+});
+
+```
+Server-side Code:
+
+
+```
+socketPlugins.AIChatPlugin = {};
+socketPlugins.AIChatPlugin.getSettings = function(socket, data, callback) {
+    meta.settings.get('ai-chat')
+    .then(settings => {
+        let settingsData = { 
+            'brain-url': settings['brain-url'],
+            'token': settings['token'] 
+        };
+        callback(null, { data: settingsData });
+    })
+    .catch(err => {
+        callback(err);
+    });
+};
+```
+This server-side code is registered in the plugin's init method, ensuring that the latest settings are always available for the chat functionality, regardless of whether the page is refreshed or navigated via links.
+
 ## Installation
 
     npm install nodebb-plugin-ai-chat

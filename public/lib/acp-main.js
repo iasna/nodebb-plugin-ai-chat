@@ -1,18 +1,16 @@
 'use strict';
 
-$(document).ready(function () {
-	/*
-		This file shows how admin page client-side javascript can be included via a plugin.
-		If you check `plugin.json`, you'll see that this file is listed under "acpScripts".
-		That array tells NodeBB which files to bundle into the minified javascript
-		that is served to the end user.
+/*
+	This file is located in the "modules" block of plugin.json
+	It is only loaded when the user navigates to /quickstart page
+	It is not bundled into the min file that is served on the first load of the page.
+*/
 
-		Some events you can elect to listen for:
 
-		$(document).ready();			Fired when the DOM is ready
-		$(window).on('action:ajaxify.end', function(data) { ... });			"data" contains "url"
-	*/
-
-	console.log('nodebb-plugin-quickstart: acp-loaded');
-	// Note how this is shown in the console on the first load of every page in the ACP
+define('forum/templates/ai-chat', function () {
+	var module = {};
+	module.init = function () {
+		console.log('ai-chat loaded')
+	};
+	return module;
 });

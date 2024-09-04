@@ -1,6 +1,6 @@
 {
 	"id": "nodebb-plugin-ai-chat",
-	"url": "https://github.com/NodeBB/nodebb-plugin-quickstart",
+	"url": "https://github.com/iasna/nodebb-plugin-quickstart",
 	"library": "./library.js",
 	"hooks": [
 		{ "hook": "static:app.load", "method": "init" },

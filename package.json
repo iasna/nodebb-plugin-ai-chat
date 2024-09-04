@@ -1,11 +1,11 @@
 {
   "name": "nodebb-plugin-ai-chat",
-  "version": "1.0.0",
-  "description": "A starter kit for quickly creating NodeBB plugins",
+  "version": "1.0.1",
+  "description": "A plugin to create AI chat bot that integrates with your external vector DB",
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nodebb/nodebb-plugin-ai-chat"
+    "url": "https://github.com/iasna/nodebb-plugin-ai-chat"
   },
   "keywords": [
     "nodebb",
@@ -27,7 +27,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nodebb/nodebb-plugin-ai-chat/issues"
+    "url": "https://github.com/iasna/nodebb-plugin-ai-chat/issues"
   },
   "readmeFilename": "README.md",
   "nbbpm": {

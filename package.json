@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-ai-chat",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A plugin to create AI chat bot that integrates with your external vector DB",
   "main": "library.js",
   "repository": {

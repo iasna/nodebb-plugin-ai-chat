@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-ai-chat",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A plugin to create AI chat bot that integrates with your external vector DB",
   "main": "library.js",
   "repository": {
@@ -33,6 +33,10 @@
   "nbbpm": {
     "compatibility": "^3.8.4"
   },
+  "dependencies" : {
+     "axios": "^1.7.4",
+    "qs": "^6.13.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "19.4.0",
     "@commitlint/config-angular": "19.3.0",
@@ -40,8 +44,6 @@
     "eslint-config-nodebb": "0.2.1",
     "eslint-plugin-import": "2.x",
     "husky": "9.1.4",
-    "lint-staged": "15.2.9",
-    "axios": "^1.7.4",
-    "qs": "^6.13.0"
+    "lint-staged": "15.2.9"
   }
 }

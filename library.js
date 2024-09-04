@@ -130,19 +130,19 @@ plugin.loadValues = async (data) => {
 	let hostURL = (settings['host-url'] ? settings['host-url'] : "");
 	data.templateData.brainURL = brainURL;
 	try {
-		//if(token && Date.now() < tokenExpiry)
-		//{
-		//	data.templateData.token = token;
+		if(token && Date.now() < tokenExpiry)
+		{
+			data.templateData.token = token;
 			console.log('Token is not expired returning')
-	//		return data;
+			return data;
 			
-		//}
+		}
 		// if fetch token is in progress
 		if(tokenFetchPromise){
 			token = await tokenFetchPromise
 			data.templateData.token=token;
-			console.log('in here');
-			console.log(data.templateData)
+		//	console.log('in here');
+		//	console.log(data.templateData)
 			return data;
 		}
 		

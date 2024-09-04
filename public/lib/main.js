@@ -15,15 +15,13 @@ function initChat() {
 	const chatInput = document.getElementById('chat-input');
 	const sendButton = document.getElementById('send-button');
 	const chatBox = document.getElementById('chat-box');
-
+	var settings = {};
 
 	socket.emit('plugins.AIChatPlugin.getSettings', {}, function (err, data) {
-		if (err) {
-			console.log(err)
-
-
+		if (!err) {
+			console.log(data.data.brainURL);
 			//Initialize WebSocket
-			let socket_ = new WebSocket(data.brain - url);
+			let socket_ = new WebSocket(data.data.brainURL);
 
 			// Function to append messages to chat box
 			const appendMessage = (message, sender) => {
@@ -46,26 +44,25 @@ function initChat() {
 
 			// Function to send message
 			function sendMessage() {
-				if (socket.readyState !== WebSocket.OPEN) {
+				if (socket_.readyState !== WebSocket.OPEN) {
 					console.log('WebSocket is not open, reconnecting...');
 					socket_.close();
-					socket_ = new WebSocket(data.brain - url);
+					socket_ = new WebSocket(data.data.brainURL);
 				}
 				const message = chatInput.value.trim();
 				appendMessage(message, 'user');
 				console.log(message);
 				if (message) {
-					alert('message sending')
 					const payload = {
 						question: message,
 						action: "community",
 						chat_id: "9d9e7a47-fbf6-4385-8b7e-041a3d79e51f",
 						brain_name: "CommunityKnowledgeBase",
-						token: data.token,
+						token: data.data.token,
 						type: "Chat"
 					};
 					const newMessage = JSON.stringify(payload);
-
+					console.log(newMessage);
 					socket_.send(newMessage);
 					chatInput.value = '';
 				}
@@ -107,7 +104,7 @@ function initChat() {
 			});
 		}
 		else {
-			console.log(data)
+			console.log(err)
 		}
 	});
 
@@ -124,11 +121,15 @@ function initChat() {
 
 	hooks.on('action:ajaxify.end', (data) => {
 		// called everytime user navigates between pages including first load
+		console.log(`ajaxify.end event`)
+		console.log(data);
+		initChat();
 	});
 
 	
 	hooks.on('action:ajaxify.dataLoaded', (data) => {
-	     initChat();
+		console.log(`dataLoaded event`)
+		console.log(data)
 	   // called everytime user navigates between pages including first load
    });
 })();

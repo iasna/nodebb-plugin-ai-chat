@@ -13,5 +13,4 @@ define('forum/templates/ai-chat', function () {
                 console.log('ai-chat loaded')
         };
         return module;
-});
-~                                                                                                                                                                       ~            
+});                                                                                                                                                              ~            
